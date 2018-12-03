@@ -19,8 +19,10 @@
     "start": "node index",
     "poststart": "echo \"post start\"",
     "precommit": "npm run format:check && npm run lint",
-    "prepush": "",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepush": "npm test && npm run test:coverage",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "React.js",
@@ -47,6 +49,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-watch": "^4.0.2",
     "husky": "^1.2.0",
+    "jest": "^23.6.0",
     "prettier": "^1.15.2",
     "rimraf": "^2.6.2"
   }
