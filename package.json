@@ -6,6 +6,8 @@
   "scripts": {
     "lint": "eslint '**/*.js'",
     "lint:watch": "esw -w '**/*.js'",
+    "format": "prettier --write '**/*.js'",
+    "format:check": "prettier --list-different '**/*.js'",
     "run-dist": "node dist/index",
     "run-index": "babel-node index",
     "pretranspile": "rimraf dist && mkdir dist",
@@ -16,6 +18,8 @@
     "prestart": "echo \"pre start\"",
     "start": "node index",
     "poststart": "echo \"post start\"",
+    "precommit": "npm run format:check && npm run lint",
+    "prepush": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
