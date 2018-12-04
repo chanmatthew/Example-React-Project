@@ -14,7 +14,7 @@ jobs:
           name: install-npm
           command: npm install
       - save_cache:
-          key: depedency-cache-{{ checksum "pakage.json" }}
+          key: depedency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
